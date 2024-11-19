@@ -11,6 +11,64 @@ Page({
     hasUserInfo: false,
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
+    goodsList: [
+      { myid: 1, title: "商品A", per_value: 0, total_price:0, cnt: 1, value: 0 },
+    ]
+  },
+  onDeleteGoods(e) {
+    
+    const id = e.detail.myid; // 获取子组件返回的编号
+    console.log(id);
+    const updatedList = this.data.goodsList.filter(item => item.myid !== id); // 删除对应的商品
+    console.log(this.data.goodsList);
+    this.setData({
+      goodsList: updatedList
+    });
+    console.log(this.data.goodsList);
+    console.log(`删除了商品ID: ${id}`);
+  },
+  onAddButtonTap() {
+    const newId = this.data.goodsList.length > 0 ? this.data.goodsList[this.data.goodsList.length - 1].myid + 1 : 1;
+    console.log("new: "+Number(newId));
+    const newGoods = {
+      myid:newId,
+      title: `商品${String.fromCharCode(65 + this.data.goodsList.length)}`,
+      per_value: 0,
+      total_price: 0,
+      cnt: 1,
+      value: 0
+    };
+
+    this.setData({
+      goodsList: [...this.data.goodsList, newGoods]
+    });
+    console.log("新增商品:", newGoods);
+  },
+  onUpdateGoods(e) {
+    const { myid, per_value } = e.detail; // 获取子组件返回的 id 和 per_value
+
+    const updatedList = this.data.goodsList.map(item => {
+      if (item.myid === myid) {
+        return { ...item, per_value }; // 更新 per_value
+      }
+      return item;
+    });
+
+    this.setData({
+      goodsList: updatedList
+    });
+
+    this.sortGoodsList(); // 更新后重新排序
+  },
+
+  // 排序 goodsList
+  sortGoodsList() {
+    const sortedList = [...this.data.goodsList].sort((a, b) => b.per_value - a.per_value); // 按 per_value 降序排序
+
+    this.setData({
+      goodsList: sortedList
+    });
+    console.log("排序后的商品列表:", sortedList);
   },
   bindViewTap() {
     wx.navigateTo({

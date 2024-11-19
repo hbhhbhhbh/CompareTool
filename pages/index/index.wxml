@@ -1,4 +1,23 @@
 <!--index.wxml-->
+
 <scroll-view class="scrollarea" scroll-y type="list">
-  
+
+    <block wx:for="{{goodsList}}" wx:key="myid">
+    <Goods 
+      myid="{{item.myid}}"
+      title="{{item.title}}" 
+      per_value="{{item.per_value}}" 
+      total_price="{{item.total_price}}" 
+      cnt="{{item.cnt}}" 
+      value="{{item.value}}" 
+      bind:delete="onDeleteGoods"
+      bind:update="onUpdateGoods"></Goods>
+      
+  </block>
 </scroll-view>
+<view class="tabbar">
+    <view class="tabbar-button" bindtap="onAddButtonTap">
+      <text class="add-text">+</text>
+    </view>
+  </view>
+

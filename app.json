@@ -5,8 +5,9 @@
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "Which is Cheaper?",
     "navigationBarBackgroundColor": "#ffffff"
+    
   },
   "style": "v2",
   "componentFramework": "glass-easel",

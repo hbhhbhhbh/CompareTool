@@ -1,0 +1,29 @@
+<view class="card">
+  <!-- 顶部标题和关闭按钮 -->
+  <view class="header">
+    <text class="title">商品名称</text>
+    <text class="close" bindtap="onDelete">✖</text>
+  </view>
+
+  <!-- 名称输入行 -->
+  <view class="row">
+    <input class="input name-input" placeholder="{{title}}"type="text" />
+    <text class="unit" >{{localPerValue}}</text>
+  </view>
+  <view class="divider"></view>
+  <!-- 数据输入部分 -->
+  <view class="table">
+    <view class="table-row">
+      <text class="table-header">总价</text>
+      <text class="table-header">个数</text>
+      <text class="table-header">含量 | 内部独立个数</text>
+    </view>
+    <view class="table-row">
+      <input class="table-input" placeholder="输入总价" type="digit"bindinput="onPriceInput"value="{{localTotalPrice}}"bindblur="onBlur" />
+      <input class="table-input" placeholder="输入个数" type="number"bindinput="onCntInput" value="{{localCnt}}"bindblur="onBlur" />
+      
+        <input class="table-input" placeholder="输入含量"type="digit"bindinput="onValueInput"value="{{localValue}}"bindblur="onBlur"  />
+
+    </view>
+  </view>
+</view>

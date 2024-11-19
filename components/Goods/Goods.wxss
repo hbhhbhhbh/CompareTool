@@ -1,0 +1,120 @@
+/* 整体卡片样式 */
+.card {
+  width: 600rpx; /* 卡片宽度 */
+  margin: 20rpx auto;
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  box-shadow: 0 8rpx 30rpx rgba(0, 0, 0, 0.308);
+}
+
+/* 顶部标题和关闭按钮 */
+.header {
+  
+  padding:20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+padding-bottom: 0;
+}
+
+.title {
+  padding:10rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgb(105, 105, 105);
+}
+
+.close {
+  font-size: 32rpx;
+  color: #f56c6c;
+  cursor: pointer;
+}
+
+/* 名称输入行 */
+.row {
+  padding:20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.name-input {
+  margin-right: 50rpx;
+  flex: 1;
+  padding: 10rpx;
+  font-size: 28rpx;
+  border: none;
+ 
+  outline: none;
+
+}
+
+.name-input:focus {
+
+}
+
+.unit {
+  font-size: 45rpx;
+  color: rgb(14, 13, 13);
+  margin-right: 50rpx;
+}
+/* 分割线样式 */
+.divider {
+  display: flex;
+  width: 580rpx;
+  height: 1px; /* 分割线高度 */
+  background-color: #ddd; /* 分割线颜色 */
+  margin: 2rpx auto; /* 上下间距并水平居中 */
+}
+
+/* 数据表格部分 */
+.table {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding:20rpx;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.table-header {
+  flex: 1;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: rgb(105, 105, 105);
+ padding:10rpx
+}
+
+.table-input, .table-input-large {
+  flex: 1;
+
+  font-size: 28rpx;
+  border: none;
+  padding:10rpx;
+  outline: none;
+  
+}
+
+.table-input:focus, .table-input-large:focus {
+  border-bottom: 1px solid #333;
+}
+
+.complex-input {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-description {
+  margin-top: 5rpx;
+  font-size: 22rpx;
+  color: #999;
+}

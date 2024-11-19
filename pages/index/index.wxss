@@ -59,4 +59,51 @@ page {
 
 .nickname-input {
   flex: 1;
+}/* 页面容器 */
+.container {
+  height: 100vh; /* 占满视口高度 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 可滚动内容区域 */
+.scrollarea {
+  flex: 1; /* 自动占据剩余空间 */
+  overflow: auto; /* 启用滚动 */
+  padding: 10rpx; /* 给内容留出内边距 */
+  padding-bottom: 10rpx; /* 留出按钮空间，避免最后的组件被遮挡 */
+}
+
+/* 固定底部按钮 */
+.fixed-tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx; /* 按钮高度 */
+  background-color: #fff;
+  box-shadow: 0 -4rpx 10rpx rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* 确保按钮位于页面最前方 */
+}
+
+/* 按钮样式 */
+.tabbar-button {
+  width: 100%;
+  height: 100rpx;
+  background-color: #4CAF50;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.add-text {
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: bold;
 }
