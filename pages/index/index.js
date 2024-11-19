@@ -8,12 +8,36 @@ Page({
       avatarUrl: defaultAvatarUrl,
       nickName: '',
     },
+    showPopup: true,
     hasUserInfo: false,
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
     goodsList: [
       { myid: 1, title: "商品A", per_value: 0, total_price:0, cnt: 1, value: 0 },
     ]
+  },
+  closePopup() {
+    this.setData({
+      showPopup: false
+    });
+    // 记录用户已查看教程，存储在本地
+    wx.setStorageSync("hasSeenTutorial", true);
+  },
+  onLoad() {
+    const list=wx.getStorageSync('List');
+    const hasSeenTutorial = wx.getStorageSync("hasSeenTutorial");
+    if (hasSeenTutorial) {
+      this.setData({
+        showPopup: false,
+        
+      });
+      if(list)
+      {
+        this.setData({
+          goodsList:list
+        })
+      }
+    }
   },
   onDeleteGoods(e) {
     
@@ -57,7 +81,7 @@ Page({
     this.setData({
       goodsList: updatedList
     });
-
+    wx.setStorageSync('List', this.data.goodsList);
     this.sortGoodsList(); // 更新后重新排序
   },
 

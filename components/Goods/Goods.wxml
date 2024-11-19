@@ -14,9 +14,9 @@
   <!-- 数据输入部分 -->
   <view class="table">
     <view class="table-row">
-      <text class="table-header">总价</text>
+      <text class="table-header">单价</text>
       <text class="table-header">个数</text>
-      <text class="table-header">含量 | 内部独立个数</text>
+      <text class="table-header">净含量</text>
     </view>
     <view class="table-row">
       <input class="table-input" placeholder="输入总价" type="digit"bindinput="onPriceInput"value="{{localTotalPrice}}"bindblur="onBlur" />

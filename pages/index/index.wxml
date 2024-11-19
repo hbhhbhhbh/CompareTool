@@ -1,5 +1,11 @@
 <!--index.wxml-->
-
+<view class="popup" wx:if="{{showPopup}}">
+    <view class="popup-content">
+      <text class="popup-title">欢迎使用本小程序！</text>
+      <text class="popup-text">\n下面进行一些小小的规则说明：每一个模块都有单价，个数，和含量。\n目前为止有两种计算方式\n1.当货品单个单个卖时：\n单价为单个货品的价格，个数默认为1，含量为单个货品的价值含量.\n2.当货品以整合的方式卖时：\n单价为单个货品价格，个数为里面的货品个数，含量为单个货品的价值含量</text>
+      <button class="popup-close" bindtap="closePopup">开始使用</button>
+    </view>
+  </view>
 <scroll-view class="scrollarea" scroll-y type="list">
 
     <block wx:for="{{goodsList}}" wx:key="myid">

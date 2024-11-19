@@ -101,8 +101,16 @@ Component({
         });
         return;
       }
-
-      const perValue = (totalPrice / value).toFixed(2); // 计算每单位价格
+      var perValue=0; // 计算每单位价格
+      if(cnt>1)
+      {
+        perValue= (totalPrice/(cnt * value)).toFixed(6);
+      }
+      else if(cnt==1)
+      {
+        perValue= (totalPrice/(value)).toFixed(6);
+      }
+      
       console.log("每单位价格:", perValue);
 
       this.setData({
